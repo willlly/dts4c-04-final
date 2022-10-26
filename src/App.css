@@ -1,38 +1,444 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background: #e5e5e5;
+    z-index: 10;
+}
+
+.latest-title {
+    height: 40px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.footer-text {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+}
+
+.pagination-background {
+    background: #d8f9ff;
+}
+
+.css-rrff7c {
+    display: block;
+}
+
+/* #region Page: News Card */
+.newscard-image {
+    width: 270px;
+    height: 175px;
+    border-radius: 8px;
+}
+.newscard-title {
+    width: 250px;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+.newscard-pubdate {
+    width: 110px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    float: left;
+}
+.newscard-source {
+    width: 95px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    float: left;
+    display: block;
+}
+/* #endregion Page: News Card */
+
+/* #region Page: Hot Topics */
+.hot-title {
+    width: 230px;
+    height: 56px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+}
+
+.hot-image {
+    width: 800px;
+    height: 400px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 42.25%,
+        rgba(0, 0, 0, 0.65) 100%
+    );
+    border-radius: 8px;
+    filter: brightness(50%);
+}
+
+.hot-desc {
+    width: 300px;
+
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+
+    display: block;
+}
+
+.hot-article-title {
+    position: absolute;
+    width: 700px;
+    height: 144px;
+    left: 50px;
+    top: 250px;
+
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    /* or 48px */
+
+    /* White */
+
+    color: #f8f8f8;
+}
+
+.hot-article-pubdate {
+    position: absolute;
+    width: 67px;
+    height: 18px;
+    left: 50px;
+    top: 350px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    /* identical to box height, or 18px */
+
+    /* White */
+
+    color: #f8f8f8;
+}
+
+.hot-article-source {
+    position: absolute;
+    width: 300px;
+    height: 18px;
+    left: 175px;
+    top: 350px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    /* identical to box height, or 18px */
+
+    /* White */
+
+    color: #f8f8f8;
+}
+/* #endregion Page: Hot Topics */
+
+/* #region Page: Detail */
+.detail-image {
+    width: 1171px;
+    height: 400px;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 42.25%,
+        rgba(0, 0, 0, 0.65) 100%
+    );
+    border-radius: 8px;
+}
+
+.detail-title {
+    width: 1171px;
+
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+}
+
+.detail-pubdate {
+    width: 200px;
+    height: 18px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+
+    float: left;
+}
+
+.detail-source {
+    width: 100px;
+    height: 18px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+
+    float: left;
+}
+
+.detail-content {
+    width: 1171px;
+
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 65px */
+
+    clear: both;
+}
+/* #endregion Page: Detail */
+
+/* added for iPhone 11 Pro */
+@media only screen and (max-width: 600px) {
+    .css-rrff7c {
+        display: none;
+    }
+
+    .latest-title {
+        font-size: 18px;
+    }
+
+    /* #region hot topics */
+    .hot-title {
+        font-size: 24px;
+    }
+
+    .hot-image {
+        width: 320px;
+        height: 140px;
+    }
+
+    .hot-desc {
+        display: none;
+    }
+
+    .hot-article-title {
+        position: absolute;
+        width: 280px;
+        height: 144px;
+        left: 20px;
+        top: 65px;
+        font-size: 14px;
+    }
+
+    .hot-article-pubdate {
+        position: absolute;
+        width: 67px;
+        height: 18px;
+        left: 20px;
+        top: 110px;
+        font-size: 10px;
+    }
+
+    .hot-article-source {
+        position: absolute;
+        width: 300px;
+        height: 18px;
+        left: 100px;
+        top: 110px;
+        font-size: 10px;
+    }
+    /* #endregion */
+
+    /* #region detail */
+    .detail-image {
+        width: 350px;
+        height: 280px;
+    }
+
+    .detail-title {
+        width: 350px;
+    }
+    .detail-content {
+        width: 350px;
+    }
+    /* #endregion */
+
+    /* #region news card */
+    .newscard-image {
+        width: 250px;
+        height: 152px;
+    }
+    .newscard-title {
+        width: 250px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .newscard-pubdate {
+        width: 250px;
+        font-size: 10px;
+    }
+    .newscard-source {
+        display: none;
+    }
+    /* #endregion */
+}
+
+/* added for iPad Mini */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .latest-title {
+        font-size: 24px;
+    }
+
+    /* #region hot topics */
+    .hot-title {
+        font-size: 36px;
+    }
+
+    .hot-image {
+        width: 640px;
+        height: 280px;
+    }
+
+    .hot-desc {
+        display: none;
+    }
+
+    .hot-article-title {
+        position: absolute;
+        width: 575px;
+        height: 144px;
+        left: 30px;
+        top: 140px;
+        font-size: 24px;
+    }
+
+    .hot-article-pubdate {
+        position: absolute;
+        width: 67px;
+        height: 18px;
+        left: 50px;
+        top: 240px;
+        font-size: 12px;
+    }
+
+    .hot-article-source {
+        position: absolute;
+        width: 300px;
+        height: 18px;
+        left: 175px;
+        top: 240px;
+        font-size: 12px;
+    }
+    /* #endregion */
+
+    /* #region detail */
+    .detail-image {
+        width: 675px;
+        height: 545px;
+    }
+
+    .detail-title {
+        width: 675px;
+    }
+    .detail-content {
+        width: 675px;
+    }
+    /* #endregion */
+
+    /* #region news card */
+    .newscard-image {
+        width: 180px;
+        height: 95px;
+    }
+    .newscard-title {
+        width: 170px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .newscard-pubdate {
+        width: 120px;
+        font-size: 12px;
+    }
+    .newscard-source {
+        display: none;
+    }
+    /* #endregion */
+}
+
+/* added for default */
+@media only screen and (min-width: 768px) {
+    /* h1 {
+        background: blue;
+    } */
 }
